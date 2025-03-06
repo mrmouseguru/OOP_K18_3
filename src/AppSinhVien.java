@@ -38,6 +38,7 @@ public class AppSinhVien {
 		
 		//in sinh viên3
 		System.out.println("ma sinh vien 3: " + sv3.maSV);
+		Object cls;
 	}
 
 }
