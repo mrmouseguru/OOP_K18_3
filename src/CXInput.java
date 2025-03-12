@@ -6,16 +6,28 @@ public class CXInput {
 	// ô 2
 	Scanner keyboard;
 	PrintWriter out;
+	CXStorage cxStorage;
+	CXOutput cxOutput;
 
 	// ô 3
 	CXInput() {
 		keyboard = new Scanner(System.in);
 		out = new PrintWriter(System.out);
+		cxStorage = new CXStorage();
+		cxOutput  = new CXOutput();
 	}
 
 	CXInput(Scanner _keyboard, PrintWriter _out) {
 		keyboard = _keyboard;
 		out = _out;
+	}
+	
+	CXInput(Scanner _keyboard, PrintWriter _out, CXStorage _cxStorage) {
+		//keyboard = _keyboard;
+		//out = _out;
+		//gọi đến hàm khưởi tạo 2 tham số của chính nó
+		this(_keyboard, _out);
+		cxStorage = _cxStorage;
 	}
 
 	void input() {
@@ -29,6 +41,8 @@ public class CXInput {
 		float soKm;
 		int soNgayDi;
 		String noiDen;
+		CXNoiThanh cxNoi;
+		CXNgoaiThanh cxNgoai;
 		out.print("[NHAP MA CX]:");
 		out.flush();
 		maCX = keyboard.nextInt();//<= 1111Enter
@@ -66,6 +80,15 @@ public class CXInput {
 			out.print("[NHAP SO KM:]");
 			out.flush();
 			soKm = keyboard.nextFloat();
+			
+			//khởi tạo đối tượng chuyến xe Nội thành
+			cxNoi = new CXNoiThanh(maCX, hoTenTX, soXe, donGia, soTuyen, soKm);
+			
+			//gửi thông điệp đến đối tượng CXStorage
+			cxStorage.insertCXNoi(cxNoi);
+			
+			//gửi thông điệp cho đối tượng CXOutput
+			cxOutput.printThongBao(cxNoi);
 		}
 		if(loaiCX == 2) {
 			out.print("[NHAP SO NGAY DI]");
@@ -76,6 +99,15 @@ public class CXInput {
 			out.print("[NHAP NOI DEN:]");
 			out.flush();
 			noiDen = keyboard.nextLine();
+			
+			//khởi tạo đối tượng
+			cxNgoai = new CXNgoaiThanh(maCX, hoTenTX, soXe,
+					donGia, noiDen, soNgayDi);
+			
+			//gửi thông điệp
+			cxStorage.insertCXNgoai(cxNgoai);
+			//gửi thông điệp
+			cxOutput.printThongBao(cxNgoai);
 		}
 
 	}

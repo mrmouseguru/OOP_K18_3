@@ -24,5 +24,14 @@ public class CXNoiThanh extends ChuyenXe{
 	double tinhDoanhThu() {
 		return donGia * soKm;
 	}
+	
+	//toString()
+	@Override
+	public String toString() {
+		return "[MA CX]: " + maCX + "\n" +
+				"[HO TEN TX]: " + hoTenTX + "\n" +
+				"[SO XE]: " + soXe;
+		//...
+	}
 
 }
