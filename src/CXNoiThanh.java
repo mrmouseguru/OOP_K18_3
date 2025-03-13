@@ -28,9 +28,11 @@ public class CXNoiThanh extends ChuyenXe{
 	//toString()
 	@Override
 	public String toString() {
-		return "[MA CX]: " + maCX + "\n" +
+		return /*"[MA CX]: " + maCX + "\n" +
 				"[HO TEN TX]: " + hoTenTX + "\n" +
-				"[SO XE]: " + soXe;
+				"[SO XE]: " + soXe*/ super.toString() + 
+				"\n[SO TUYEN]: " + soTuyen +
+				"\n[SO KM]: " + soKm;
 		//...
 	}
 

@@ -8,6 +8,7 @@ public class CXMenu {
 	Scanner in;
 	String prompt;
 	CXInput cxInput;
+	CXControlPrint cxControlPrint;
 	// ô 3
 	CXMenu() {
 		// TODO Auto-generated constructor stub
@@ -15,6 +16,7 @@ public class CXMenu {
 		in = new Scanner(System.in);
 		prompt = "->";
 		cxInput = new CXInput();
+		cxControlPrint = new CXControlPrint();
 	}
 	
 	CXMenu(PrintWriter _out,
@@ -63,7 +65,17 @@ public class CXMenu {
 				add();
 				continue;
 			}
+			
+			if("print".equalsIgnoreCase(command)) {
+				print();
+				continue;
+			}
 		}
+	}
+
+	private void print() {
+		//gửi thông điẹp
+		cxControlPrint.printDSCX();
 	}
 
 	private void add() {

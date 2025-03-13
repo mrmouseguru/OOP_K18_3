@@ -23,4 +23,10 @@ public class CXNgoaiThanh extends ChuyenXe{
 	{
 		return donGia * soNgayDi;
 	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + "\n[NOI DEN]: " + noiDen +
+				"\n[SO NGAY DI]: "+ soNgayDi;
+	}
 }

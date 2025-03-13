@@ -26,5 +26,13 @@ public class ChuyenXe {
 	{
 		return 0;
 	}
+	
+	@Override
+	public String toString() {
+		return "[MA CX]: " + maCX + "\n" +
+				"[HO TEN TX]: " + hoTenTX + "\n" +
+				"[SO XE]: " + soXe;
+		//...
+	}
 
 }

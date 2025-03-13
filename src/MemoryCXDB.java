@@ -28,5 +28,13 @@ public class MemoryCXDB {
 	static void addCXNgoaiThanh(CXNgoaiThanh cx) {
 		databaseNgoaiThanh.add(cx);
 	}
+	
+	static ArrayList<CXNoiThanh> getDSCXNoi() {
+		return databaseNoiThanh;
+	}
+	
+	static ArrayList<CXNgoaiThanh> getDSCXNgoai(){
+		return databaseNgoaiThanh;
+	}
 
 }
